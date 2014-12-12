@@ -1,0 +1,13 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" ng-href="/#/">Training Portal</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" role="menu">
+                <li ng-class="{ active: isActive('/hello') }"><a ng-href="/#/hello">Hello</a></li>
+                <li ng-class="{ active: isActive('/second') }"><a ng-href="/#second">Second</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

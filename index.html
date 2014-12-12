@@ -1,0 +1,19 @@
+<html ng-app="training-portal">
+<head>
+    <title>Training Portal</title>
+    <script src="js-lib/angular.js"></script>
+    <script src="js-lib/angular-route.js"></script>
+    <script src="js-lib/ngStorage.js"></script>
+    <script src="js-lib/ui-bootstrap-tpls-0.12.0.js"></script>
+    <link rel="stylesheet" href="css-lib/bootstrap.css"/>
+    <script src="js/training-portal.js"></script>
+</head>
+<body ng-controller="main">
+<div>
+    <div ng-include="'menu.html'"></div>
+    <div class="container theme-showcase" role="main">
+        <div ng-view></div>
+    </div>
+</div>
+</body>
+</html>
