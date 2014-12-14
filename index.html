@@ -1,18 +1,98 @@
 <html ng-app="training-portal">
 <head>
     <title>Training Portal</title>
-    <script src="js-lib/angular.js"></script>
-    <script src="js-lib/angular-route.js"></script>
-    <script src="js-lib/ngStorage.js"></script>
-    <script src="js-lib/ui-bootstrap-tpls-0.12.0.js"></script>
-    <link rel="stylesheet" href="css-lib/bootstrap.css"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="js/angular.ui.highlight.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="modules/vote-widget/vote-widget.css"/>
+    <link rel="stylesheet" href="modules/select/select.css"/>
+    <link rel="stylesheet" href="modules/trainings-block/trainings-block.css"/>
+    <link rel="stylesheet" href="modules/search-page/search-page.css"/>
     <script src="js/training-portal.js"></script>
+    <script src="modules/search-page/search-page.js"></script>
+    <script src="modules/trainings-block/trainings-block.js"></script>
+    <script src="modules/stub-data/trainings.js"></script>
+    <script src="modules/stub-data/vote-trainings.js"></script>
+    <script src="modules/params-block/params-block.js"></script>
+    <script src="modules/select/select.js"></script>
+
+
+    <script src="modules/vote-widget/vote-widget.js"></script>
+    <style>
+        .ui-match { background: yellow; }
+    </style>
 </head>
 <body ng-controller="main">
-<div>
-    <div ng-include="'menu.html'"></div>
+<div class="">
+    <div class="header clearfix">
+        <div class="right-part">
+            <ul>
+                <li class="first"><a href="javascript:void(0)">Live Chat</a></li>
+                <li class="second"><a href="javascript:void(0)">Help</a></li>
+                <li class="third"><a href="javascript:void(0)"  id="sidebar-toggle-two"><img src="img/face.png" alt=""/></a></li>
+            </ul>
+        </div>
+        <h3>epam training portal</h3>
+        <div class="toggle-wrap">
+            <a href="javascript:void(0)" data-toggle=".container" id="sidebar-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+        </div>
+    </div>
+    <div class="container" id="container-right">
+        <div id="sidebar">
+            <ul class="nav navbar-nav" role="menu">
+                <li class="li-title"><a href="">Trainings</a></li>
+                <li><a href="">Regular Language Courses</a></li>
+                <li><a href="">Short Language Trainings</a></li>
+                <li class="li-title"><a href="">Self-Study Trainings</a></li>
+                <li><a href="">Video Trainings</a></li>
+                <li><a href="">Shared Video Server</a></li>
+                <li><a href="">My Self-Study Trainings</a></li>
+                <li class="li-title"><a href="">Tools and Materials</a></li>
+                <li><a href="">Training Materials</a></li>
+                <li><a href="">Training Statistics</a></li>
+                <li><a href="">Language Courses Statistics</a></li>
+                <li><a href="">User Profiles</a></li>
+                <li></li>
+            </ul>
+        </div>
+        <div id="sidebarTwo">
+            <div class="desc">
+                <a class="title" href="javascript:void(0)">Siarhei Mazurkevich</a>
+                <p class="position">UX Design</p>
+                <button>Logout</button>
+            </div>
+            <div class="photo">
+                <img src="img/Siarhei_Mazurkevich.gif" alt=""/>
+            </div>
+
+        </div>
+        <div class="floating" style="z-index: 1000">
+            <div class="aside-menu">
+                <ul>
+                    <li><a href="" class="eng">English</a></li>
+                    <li><a href="#/votePage" class="vote" >Vote</a></li>
+                    <li><a href="" class="vid">Video archive</a></li>
+                    <li><a href="" class="fav">Favourite</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+
+            <div ng-view></div>
+        </div>
+    </div>
     <div class="container theme-showcase" role="main">
-        <div ng-view></div>
     </div>
 </div>
 </body>
