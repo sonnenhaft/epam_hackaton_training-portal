@@ -1,0 +1,66 @@
+<div class='training-item' ng-repeat="training in trainings | orderBy : 'date' : dateOrder " class="row">
+    <div class="col-xs-3 "></div>
+    <div class="col-xs-9 training-block">
+        <div class="col-xs-1">
+            <br/><br/>
+            <svg height="50" width="50" style="float: right">
+                <circle cx="25" cy="25" r="25" ng-attr-fill="{{getColor(training.key)}}"/>
+                <text x="25" y="31" fill="white" font-size="20px" text-anchor="middle">{{training.key | limitTo : 2|
+                    uppercase}}
+                </text>
+            </svg>
+            <i class="favorite"></i>
+        </div>
+        <div class="col-xs-7 col-md-8 training-item-text" ng-init="showFullText">
+            <h3>
+                <span ng-bind-html="training.name | highlight:searchText | unsafe"></span>
+            </h3>
+            <span ng-hide="showFullText">
+            <span ng-bind-html="training.description | highlight:searchText | unsafe"></span>
+
+            <span ng-show="training.description.length >=400">
+                <a ng-hide="showFullText" ng-click="showFullText = true" style="cursor: pointer">...</a>
+            </span>
+        </span>
+
+            <div class="training-info-type">
+                <span class="">{{training.category}}</span> <span class="">{{training.type}}</span>
+            </div>
+            <div class="btn-wrap">
+                <button class="btn-green">Include Me</button>
+                <button class="btn-grey">Read more</button>
+            </div>
+        </div>
+        <div class="col-xs-4 col-md-3 training-details-block">
+            <br/>
+            <br/>
+            <table class="training-details">
+                <tr>
+                    <td>Start Date</td>
+                    <td>{{training.date | date : 'd MMM yyyy'}}</td>
+                </tr>
+                <tr>
+                    <td>End Date:</td>
+                    <td>{{training.date | date : 'd MMM yyyy'}}</td>
+                </tr>
+                <tr>
+                    <td>Duration:</td>
+                    <td>{{training.duration}}</td>
+                </tr>
+                <tr>
+                    <td>Attendees:</td>
+                    <td>{{training.subscribers}}</td>
+                </tr>
+                <tr>
+                    <td>Location:</td>
+                    <td>{{training.location.address}}{{', ' + training.location.city}}</td>
+                </tr>
+                <tr>
+                    <td>Language:</td>
+                    <td>{{training.language}}</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>

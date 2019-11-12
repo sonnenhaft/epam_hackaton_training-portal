@@ -1,0 +1,20 @@
+<div class="search-page">
+    <div class="jumbotron" ng-init="dateOrder = false">
+        <div class="search-block">
+            <div class="filter-link" ng-class="{'active': showFilter}" ng-click="showFilter = !showFilter"></div>
+            <div class="search-button" ng-click="changeInput('')">SEARCH TRAININGS</div>
+            <div class="form-group">
+                <i class="search-icon"><img src="img/search-icon-min.png" alt=""/></i>
+                <i class="reset-search" ng-click="resetSearch()"><img src="img/reset-search-min.png" alt=""/></i>
+                <input type="text" class="form-control" ng-model="searchParams" placeholder="Type to search training..."
+                       ng-change="changeInput(searchParams)">
+            </div>
+        </div>
+    </div>
+
+    <params-block date-order="dateOrder" style="display: block;width: 99%;"></params-block>
+    <div class="filter-search" ng-hide="showFilter">
+        <div class="filter-search-img"></div>
+    </div>
+    <trainings-block trainings="trainings" date-order="dateOrder" search-text="searchParams"></trainings-block>
+</div>

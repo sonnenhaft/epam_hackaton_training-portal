@@ -1,0 +1,47 @@
+<div class="vote-page ">
+    <div class="vote-widget">
+        <button class="add-vote-idea-btn btn" ng-click="addVoteIdea()">Add</button>
+        <input class="add-vote-idea" placeholder="Enter your idea!" ng-model='newIdea' type="text"/>
+
+        <div class="col-xs-3 col-md-2"></div>
+        <div class="col-xs-9 col-md-10">
+            <div class="training" ng-repeat="training in voteTrainings">
+                <div class="vote-number-block">
+                    <div class="vote-number">
+                        <span class="number">{{training.number}}</span>
+                        <span>votes</span>
+                    </div>
+                    <button class="send-vote btn" ng-click="vote($index, $event)">Vote</button>
+                </div>
+                <div class="training-info">
+                    <span class="training-name">{{($index+1) + '.  '}}{{training.name}}</span>
+
+                    <div class="training-description">{{training.description}}</div>
+                    <div class="training-additional-info">
+                <span class="comments-link" ng-class="{'disable' : training.comments.length===0}"
+                      ng-click="commentsVisible= !commentsVisible"> {{training.comments.length || 0}} comments</span>
+                    </div>
+                    <div class="training-comments" ng-show="commentsVisible === true">
+                        <div class="comment" ng-repeat="comment in training.comments">
+                            <a href='#' class="comment-author">{{comment.author}}</a>
+                            <span class="comment-date">commented {{comment.date | date : 'MMMM/dd/yy hh:mm a'}}</span>
+
+                            <p class="comment-text">{{comment.text}}</p>
+                        </div>
+                    </div>
+                    <span class="add-comment-link" ng-click="addComment = !addComment">
+                Add comment <i ng-if="addComment === true">-</i>
+                    <i ng-if="addComment === false">+</i>
+            </span>
+
+                    <div ng-show="addComment === true" class="add-comment">
+                        <textarea class="add-comment-text" ng-model="$parent.newCommentsItem" name="comment" id="" cols="30"
+                                  rows="10"></textarea>
+                        <button class="add-comment btn" ng-click="addCommentItem($index)">Add comment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

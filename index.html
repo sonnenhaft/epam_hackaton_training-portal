@@ -4,31 +4,21 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
-    <script src="js/angular.ui.highlight.js"></script>
+    <script src='js/angular.ui.highlight.js'></script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="modules/vote-widget/vote-widget.css"/>
-    <link rel="stylesheet" href="modules/select/select.css"/>
-    <link rel="stylesheet" href="modules/trainings-block/trainings-block.css"/>
-    <link rel="stylesheet" href="modules/search-page/search-page.css"/>
-    <script src="js/training-portal.js"></script>
-    <script src="modules/search-page/search-page.js"></script>
-    <script src="modules/trainings-block/trainings-block.js"></script>
-    <script src="modules/stub-data/trainings.js"></script>
-    <script src="modules/stub-data/vote-trainings.js"></script>
-    <script src="modules/params-block/params-block.js"></script>
-    <script src="modules/select/select.js"></script>
+    <link rel='stylesheet' href='styles.css'/>
 
-
-    <script src="modules/vote-widget/vote-widget.js"></script>
+    <script src='js/training-portal.module.js'></script>
+    <script src='js/search-page.module.js'></script>
     <style>
         .ui-match { background: yellow; }
     </style>
 </head>
+
 <body ng-controller="main">
 <div class="">
     <div class="header clearfix">
@@ -36,10 +26,12 @@
             <ul>
                 <li class="first"><a href="javascript:void(0)">Live Chat</a></li>
                 <li class="second"><a href="javascript:void(0)">Help</a></li>
-                <li class="third"><a href="javascript:void(0)"  id="sidebar-toggle-two"><img src="img/face.png" alt=""/></a></li>
+                <li class="third"><a href="javascript:void(0)"  id="sidebar-toggle-two"><img src="img/face-min.png" alt=""/></a></li>
             </ul>
         </div>
+
         <h3>epam training portal</h3>
+
         <div class="toggle-wrap">
             <a href="javascript:void(0)" data-toggle=".container" id="sidebar-toggle">
                 <span class="bar"></span>
@@ -48,6 +40,7 @@
             </a>
         </div>
     </div>
+
     <div class="container" id="container-right">
         <div id="sidebar">
             <ul class="nav navbar-nav" role="menu">
@@ -66,6 +59,7 @@
                 <li></li>
             </ul>
         </div>
+
         <div id="sidebarTwo">
             <div class="desc">
                 <a class="title" href="javascript:void(0)">Siarhei Mazurkevich</a>
@@ -73,10 +67,10 @@
                 <button>Logout</button>
             </div>
             <div class="photo">
-                <img src="img/Siarhei_Mazurkevich.gif" alt=""/>
+                <img src="img/siarhei_mazurkevich.gif" alt=""/>
             </div>
-
         </div>
+
         <div class="floating" style="z-index: 1000">
             <div class="aside-menu">
                 <ul>
@@ -87,8 +81,8 @@
                 </ul>
             </div>
         </div>
-        <div class="main-content">
 
+        <div class="main-content">
             <div ng-view></div>
         </div>
     </div>
